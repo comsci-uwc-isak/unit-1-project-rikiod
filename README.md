@@ -20,7 +20,8 @@ This problem aims to help a business owner have a comprehensive system to keep t
 Design
 ---------
 ** First Sketch of the System **
-![System Diagram](System Diagram.png)
+![System Diagram](SystemDiagram.png)
+**Fig. 1** First sketch of the system showing the main input/output and host computer with details such as actions and organization.
 
 Development
 --------
