@@ -1,0 +1,121 @@
+#!/bin/bash
+
+#This program will print the user entered argument inside a frame with a length of 100 characters.
+
+characters=1
+while :
+do
+	echo -n "*"
+	(( characters++ ))
+	if [[ characters -gt 100 ]]; then
+		break 
+	fi
+done
+
+characters=1
+echo -n "*"
+while :
+do
+	echo -n " "
+	(( characters++ ))
+	if [[ characters -gt 98 ]]; then
+		echo -n "*"
+		break
+	fi
+done
+
+characters=1
+echo -n "*"
+while :
+do
+	echo -n " "
+	(( characters++ ))
+	if [[ characters -gt 98 ]]; then
+		echo -n "*"
+		break
+	fi
+done
+
+argument=$*
+wordCount=${#argument}
+half=$(( $wordCount/2 ))
+final=$(( 49-$half ))
+oddEven=0
+after=$final
+
+if [ $((wordCount%2)) -eq 0 ];
+then
+    oddEven="even"
+else
+    oddEven="odd"
+fi
+
+if [[ $oddEven=odd ]]; then
+	(( after-- ))
+fi
+
+#COMMUNICATES THE ARGUMENT TO THE USER
+characters=1
+echo -n "*"
+while :
+do
+	echo -n " "
+	(( characters++ ))
+	if [[ characters -gt $final ]]; then
+		echo -n $*
+		break
+	fi
+done
+
+characters=1
+while :
+do
+	echo -n " "
+	(( characters++ ))
+	if [[ characters -gt $after ]]; then
+		break
+	fi
+done
+
+characters=1
+echo -n "*"
+echo -n "*"
+while :
+do
+	echo -n " "
+	(( characters++ ))
+	if [[ characters -gt 98 ]]; then
+		echo -n "*"
+		break
+	fi
+done
+
+characters=1
+echo -n "*"
+while :
+do
+	echo -n " "
+	(( characters++ ))
+	if [[ characters -gt 98 ]]; then
+		echo -n "*"
+		break
+	fi
+done
+
+characters=1
+while :
+do
+	echo -n "*"
+	(( characters++ ))
+	if [[ characters -gt 100 ]]; then
+		break 
+	fi
+done
+
+
+
+
+
+#THIS DOES THE TWO LINES OF PADDING
+
+
