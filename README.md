@@ -52,6 +52,16 @@ echo "Installation complete."
 exit
 ```
 
+### 1. Ideas to create a new car or record a new trip.
+Inputs: plate number, model, color, number of passengers -- create a car --> output: logged in file 
+Inputs: km, dates, plate of car -- record trip --> output: logged in file
+
+1. Get inputs (either by read or with arguments)
+2. Check if the number of arguments is 4, otherwise exit. if $# -eq 4; then continue, else exit
+3. Write to main file with an extra line. echo "    " >> maincarfile.txt
+4. Create car trip file with licenseplate.txt. echo "    " >> plate.txt
+
+
 Evaluation
 -----------
 
