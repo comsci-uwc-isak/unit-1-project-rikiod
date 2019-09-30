@@ -6,3 +6,6 @@ Homework: Write 100-150 words in the README about the importance of understandin
 
 Reflection for Wednesday, September 25th
 Today we worked on a system disagram and installation script for the Minimal Car Rental problem. Both of these can now be found in the README of this repository. I was somewhat confused about the installation script and how to direct something towards a particular folder. The system diagram, however, made a lot of sense to me and was a great way to organize my thoughts for such a big project such as this. 
+
+Reflection for Friday, September 27th 
+We created a program which puts a message inside a box made of asteriks. It automatically adjusts for the length of the word and puts it inside the middle of the frame. 
