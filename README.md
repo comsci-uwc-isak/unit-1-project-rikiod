@@ -15,7 +15,28 @@ Contents
 Planning
 ----------
 **Defining the Problem (Topic 1.1.1):**
-This problem aims to help a business owner have a comprehensive system to keep track of the tasks that a car rental service would have to perform. This includes creating new cars within the system, logging trips, and keeping statistics of the mileage of various cars. This system hopes to be as easy to use as possible so the transition is quick and easy; the system will heavily minimize the amount of work that the car rental business has to do. Since the business owner is not especially familiar with computer programs, the solution will also attempt to be very easy to install and then easy to perform actions within the program.
+The client for this problem is the owner of a small car rental agency called Minimal Car Rental. This business employs multiple people with little technological experience and this project aims to help the client have a comprehensive system to keep track of the business's logs. 
+
+Currently, the business owner is using a physical system with pen and paper. While this is functional, it is more time consuming and also can be disabling in the long term. It decreases productivity and makes it difficult to manage statistics and further growth of the business. 
+
+I propose a new computer based system which would have a variety of functions as listed in the Success Criteria. This system hopes to be as simple to use as possible so the employees will easily be able to use the system. In addition, the system will be easy to transition to and will minimize the amount of work that the business has to do to keep records. 
+
+I will create a Bash program to manage all of this and help the business. 
+
+**Proposed Solution:**
+I decided to use Bash to solve this problem because of the level of simplicity it brings. Since the client requires an extremely simple system which is easy to train multiple employees on how to use, the entire program harnesses simple functions and applications built into the computer. 
+
+There are only a few functions; however, this makes it easy to understand and Bash also makes us capable of expanding the program to encompass more aspects of the business if necessary. For this specific client, an online system isn’t necessary since all of the data can be stored locally at the store. Thus, it wouldn’t make sense to develop that function. Further, a Bash program requires no additional software (unless using WIndows, in which case, a Linux simulator is required) which again, ensures that the program is very user friendly and simple to use. 
+
+**Success Criteria:**
+1. A car can be created and stored in the database
+2. A car's information can be edited
+3. A car can be deleted from the database
+4. The installation is ***simple, meaning it's a one-step process***
+5. A summary (total/average distance traveled) can be generated for a particular car
+6. Trips can be recorded and stored for an existing car.
+7. A basic database system is implemented.
+8. A basic backup function is available. 
 
 Design
 ---------
@@ -128,8 +149,8 @@ exit
 ### 4. Backing up the database 
 Inputs: name of location to backup (ex. hard drive name) 
 1. Obtain inputs 
-2. Check if the number of arguments (inputs) is one, otherwise exit.
-3. Copy database to the input. 
+2. Check if the number of arguments (inputs, found with $#) is one, otherwise exit.
+3. Copy database to the input using the function cp -a <File> <Destination>.
 
 The following script creates a backup of the database in a designated location.
 ``` .sh
