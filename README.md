@@ -52,15 +52,99 @@ echo "Installation complete."
 exit
 ```
 
-### 1. Ideas to create a new car or record a new trip.
-Inputs: plate number, model, color, number of passengers -- create a car --> output: logged in file 
-Inputs: km, dates, plate of car -- record trip --> output: logged in file
+### 2. Creating a new car
+Inputs: plate number, model, color, number of passengers --> output: logged in file 
 
 1. Get inputs (either by read or with arguments)
 2. Check if the number of arguments is 4, otherwise exit. if $# -eq 4; then continue, else exit
 3. Write to main file with an extra line. echo "    " >> maincarfile.txt
 4. Create car trip file with licenseplate.txt. echo "    " >> plate.txt
 
+The following script inputs the data for a new car into a file called maincarefile.txt and records the license plate number in  a file called plate.txt. 
+
+``` .sh 
+#!/bin/bash
+
+#This program enables users of the Minimal Car Rental software to create a car in the system.
+#The car will be logged in maincarfile.txt.
+
+echo $*
+
+plate=$1
+model=$2
+color=$3
+passengers=$4
+
+if [[ $# -ne 4 ]]; then
+        echo "Sorry, there was an error. Next time, please enter the license plate number, the mode$
+        exit
+else
+        echo "$plate $model $color $passengers" >> RentalCarApp/db/maincarfile.txt
+        echo " " >> RentalCarApp/db/$plate.txt
+        echo "The car with the license plate $plate has been added."
+        echo "To add another car, run this same program with the arguments plate, model, color, and$
+        exit
+fi
+```
+
+### 3. Recording a new trip 
+Inputs: distance, start date, end date, license plate --< output: logged in life
+1. Get inputs (either by read or with arguments)
+2. Check if the number of arguments is 4, otherwise exit. 
+3. Ensure the car license plate is already logged in maincarfile.txt, otherwise exit. 
+3. Write to trips.txt with an extra line. 
+
+The following script records the trip of a car in a file called trips.txt. 
+``` .sh
+#!/bin/bash
+
+#This program enables users of the Minimal Car Rental application to record a trip with a car.
+#The trip will be logged in trips.txt
+
+echo $*
+
+distance=$1
+startDate=$2
+finishDate=$3
+licensePlate=$4
+
+if [[ $# -ne 4 ]]; then
+        echo "Sorry, there was an error. Next time, please enter the distance (km), the start date,$
+        exit
+else
+        if [[ -f $licensePlate.txt ]]; then #Checking if the car exists or not
+                echo "$distance $startDate $finishData" >> RentalCarApp/db/trips.txt
+                bash "The $distance km trip has been logged on the car with plate $licensePlate."
+                echo "To add another car, run this program with the arguments distance, start date,$
+                exit
+        else
+                echo "Sorry, that car hasn't been created yet."
+                exit
+        fi
+fi
+exit
+```
+
+### 4. Backing up the database 
+Inputs: name of location to backup (ex. hard drive name) 
+1. Obtain inputs 
+2. Check if the number of arguments (inputs) is one, otherwise exit.
+3. Copy database to the input. 
+
+The following script creates a backup of the database in a designated location.
+``` .sh
+#!/bin/bash
+
+#This program will backup the entirity of the database folder within the MinimalCarRental applicati$
+
+location=$1
+if [[ $# -ne 1 ]]; then
+        echo "Sorry, there was an error."
+        exit
+else
+        cp -a RentalCarApp/db $location
+fi
+```
 
 Evaluation
 -----------
