@@ -9,3 +9,9 @@ Today we worked on a system disagram and installation script for the Minimal Car
 
 Reflection for Friday, September 27th 
 We created a program which puts a message inside a box made of asteriks. It automatically adjusts for the length of the word and puts it inside the middle of the frame. 
+
+Reflection for Monday, September 30th
+We went over the Minimal Car Project inputs and outputs for creating trips and creating cars. Then, we were assigned another function to present at the next class.
+
+Reflection for Wednesday, October 2nd
+We all presented the various projects we had: these were either summarize, edit, delete, or backup. I presented backup and based off others' ideas, thought it would be good to put the backup inside of a folder explicitly called backup. 
