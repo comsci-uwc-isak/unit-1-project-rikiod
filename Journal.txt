@@ -15,3 +15,6 @@ We went over the Minimal Car Project inputs and outputs for creating trips and c
 
 Reflection for Wednesday, October 2nd
 We all presented the various projects we had: these were either summarize, edit, delete, or backup. I presented backup and based off others' ideas, thought it would be good to put the backup inside of a folder explicitly called backup. 
+
+Journal for Monday, October 7th
+Today we created a testing program for the createCar.sh program. This testing program tested whether or not a car can be created and stored in the database by creating a trial car, checking if a file with extension.txt was created, and checking if a record for the trip was made within the main car file. If all of this criteria was met, then the testing program would communicate "Passed" to the user. Otherwise, it would tell the user "Failed." Details of our challenges and a summary of the testing software can be found in the testing section of the README for this repository. 
