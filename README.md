@@ -170,5 +170,27 @@ fi
 Evaluation
 -----------
 
+### Test 1: 
+**Testing the createCar.sh function. Was a file with extension txt (a log of the license plate) created and was a record for the car created within the mainfile?**
 
+The first run of the program had a few issues: firstly, the test file needed to move to the main folder.
+```.sh
+cd ../
+```
+This is necessary because the `createCar.sh` function resides in the main folder whereas the test file is inside the test folder.
 
+Additionally, the file couldn't detect if the file was actually formed or not properly. This was because when we formed the `cd ../` function earlier, then using `../db/TXM301.txt` was repetitive and rather than searching for the file within the database, it would go a level of organization further up and thus, exit the RentalCarApp folder. To solve this, we simply used the function:
+```.sh
+db/TXM301.txt
+```
+To check if the car was added to the main file, we used the following script:
+```.sh
+lastLine = $( tail -n 1 db/maincarfile.txt )
+``` 
+This effectively sets a variable called lastLine to the last line of the maincarfile.txt. This is because the function "tail" reads the file from the end to the beginning and the number "1" grabs only the very last line of the file. This variable "lastLine" is then later compared to the statistics of the car to ensure the createCar.sh function is working correctly. 
+
+When creating this script, however, it did not originally work because when it compared the statistics of the car in the form "TXM301 Nissan Red 9" to the variable lastLine, the function `[ "TXM301 Nissan Red 9" == $lastLine ]; then` was used. The lack of quotation marks around the variable removes the spaces from the last line, thus making the two arguments not equal to each other and yielding a false result. So, when replaced with the function `[ "TXM301 Nissan Red 9" == "$lastLine" ]; then`, the test program worked successfully. 
+
+For test 1, we effectively created a program which reliably ensures that the createCar.sh program works accurately. We performed dynamic testing, meaning that the program itself was run, whereas in static testing, the code itself is just looked through. Additionally, we performed alpha testing which means that we, the developers themselves, performed the test. If somebody not a member of our CS class instead had performed the testing, this would've been considered beta testing. Lastly, we performed white-box testing because when coding the program to test createCar.sh, we had access to the code of that program and we were able to use that to create a testing program which works correctly. 
+
+This testing program accurately determines whether or not the createCar.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works seamlessly and meets the client's needs. 
