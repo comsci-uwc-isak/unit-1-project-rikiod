@@ -152,11 +152,11 @@ Inputs: name of location to backup (ex. hard drive name)
 2. Check if the number of arguments (inputs, found with $#) is one, otherwise exit.
 3. Copy database to the input using the function cp -a <File> <Destination>.
 
-The following script creates a backup of the database in a designated location.
+The following script creates a backup of the database in a designated location which is given to the system by the user in the form of an argument. For example, /Volumes/HARDDRIVENAME.
 ``` .sh
 #!/bin/bash
 
-#This program will backup the entirity of the database folder within the MinimalCarRental applicati$
+#This program will backup the entirity of the database folder within the MinimalCarRental application
 
 location=$1
 if [[ $# -ne 1 ]]; then
