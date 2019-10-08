@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#This program will test if the "install" function of the RentalCarApp functions. 
+#The program will test to see if the RentalCarApp folder is created, then if the db folder 
+#is created, then if the scripts folder is created.
+
+cd ..
+bash install.sh
+cd /Users/rikiodahlgren/Desktop
+sleep 1
+
+a=1
+b=2
+c=3
+
+if [ -d RentalCarApp ]; then
+	echo "Test 1: The RentalCarApp folder was created -- passed"
+	a=4
+else
+	echo "Test 1: Folder not found -- failed"
+fi 
+
+cd RentalCarApp
+
+if [ -d db ]; then
+	echo "Test 2: The database folder was created -- passed"
+	b=4
+else
+	echo "Test 2: Folder not found -- failed"
+fi 
+
+if [ -d scripts ]; then
+	echo "Test 3: The scripts folder was created -- passed"
+	c=4
+else
+	echo "Test 3: Folder not found -- failed"
+fi
+
+if [[ $a == $b ]] && [[ $b == $c ]]; then
+	echo "Test Completed: The install.sh program works as expected."
+else
+	echo "Test failed."
+fi 
