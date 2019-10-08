@@ -173,20 +173,11 @@ Evaluation
 ### Test 1: 
 **Testing the createCar.sh function. Was a file with extension txt (a log of the license plate) created and was a record for the car created within the mainfile?**
 
-The first run of the program had a few issues: firstly, the test file needed to move to the main folder.
-```.sh
-cd ../
-```
-This is necessary because the `createCar.sh` function resides in the main folder whereas the test file is inside the test folder.
+The first run of the program had a few issues: firstly, the test file needed to move to the main folder by using the command `cd ../`. This is necessary because the `createCar.sh` function resides in the main folder whereas the test file is inside the test folder.
 
-Additionally, the file couldn't detect if the file was actually formed or not properly. This was because when we formed the `cd ../` function earlier, then using `../db/TXM301.txt` was repetitive and rather than searching for the file within the database, it would go a level of organization further up and thus, exit the RentalCarApp folder. To solve this, we simply used the function:
-```.sh
-db/TXM301.txt
-```
-To check if the car was added to the main file, we used the following script:
-```.sh
-lastLine = $( tail -n 1 db/maincarfile.txt )
-``` 
+Additionally, the file couldn't detect if the file was actually formed or not properly. This was because when we formed the `cd ../` function earlier, then using `../db/TXM301.txt` was repetitive and rather than searching for the file within the database, it would go a level of organization further up and thus, exit the RentalCarApp folder. To solve this, we simply used the following function: `db/TXM301.txt`. 
+
+To check if the car was added to the main file, we used the following script: `lastLine = $( tail -n 1 db/maincarfile.txt )`.
 This effectively sets a variable called lastLine to the last line of the maincarfile.txt. This is because the function "tail" reads the file from the end to the beginning and the number "1" grabs only the very last line of the file. This variable "lastLine" is then later compared to the statistics of the car to ensure the createCar.sh function is working correctly. 
 
 When creating this script, however, it did not originally work because when it compared the statistics of the car in the form "TXM301 Nissan Red 9" to the variable lastLine, the function `[ "TXM301 Nissan Red 9" == $lastLine ]; then` was used. The lack of quotation marks around the variable removes the spaces from the last line, thus making the two arguments not equal to each other and yielding a false result. So, when replaced with the function `[ "TXM301 Nissan Red 9" == "$lastLine" ]; then`, the test program worked successfully. 
@@ -196,4 +187,18 @@ For test 1, we effectively created a program which reliably ensures that the cre
 This testing program accurately determines whether or not the createCar.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works seamlessly and meets the client's needs. 
 
 ### Test 2:
-**Testing the install.sh function.
+**Testing the install.sh function. Was a directory titled RentalCarApp created on the desktop, was a directory called db formed within the RentalCarApp folder, and was a directory called scripts formed inside the RentalCarApp folder as well?**
+
+There were two issues when coding the program to test the install.sh function; however, they were both fairly minor and were easy to solve.
+
+Firstly, the program changed directories to Users/rikiodahlgren/Desktop and then ran the program install.sh. However, the install.sh program wasn't housed on the Desktop. This did not result in any additional code having to be written or deleted, rather, the order of the actions had to be changed. When changed, the program ran the program first and then moved to the Desktop. 
+
+Secondly, the code to see whether or not the folder existed posed a small issue. I originally wrote the code as `
+if [ -f RentalCarApp ]; then` but I realized that the argument -f meant the program would search for a file called "RentalCarApp." I needed the program to instead search for a directory called "RentalCarApp" so I changed the argument to -d, thus yielding `if [ -d RentalCarApp ]; then`. Once changed, the program worked accurately.
+
+For test 2, we effectively created a program which reliably ensures that the install.sh program works as intended. We performed dynamic, alpha, and white-box testing.
+
+This testing program accurately determines whether or not the install.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works to fulfill the client's needs.
+
+### Test 3:
+**Testing the...**
