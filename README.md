@@ -109,7 +109,7 @@ fi
 ```
 
 ### 3. Recording a new trip 
-Inputs: distance, start date, end date, license plate --< output: logged in life
+Inputs: distance, start date, end date, license plate --> output: logged in life
 1. Get inputs (either by read or with arguments)
 2. Check if the number of arguments is 4, otherwise exit. 
 3. Ensure the car license plate is already logged in maincarfile.txt, otherwise exit. 
@@ -165,6 +165,23 @@ if [[ $# -ne 1 ]]; then
 else
         cp -a RentalCarApp/db $location
 fi
+```
+
+### 5. Summarize the fleet's distance
+The following script finds the total distance traveled by all of the the cars in the car rental system.
+```.sh
+#!/bin/bash
+#This program will find the total distance traveled by all of the cars in the car rental system.
+
+cd ../db
+
+sum=0
+for num in $(cat trips.txt)
+    do
+        ((sum+=num))
+done
+
+echo "The total distance traveled by all cars is $sum km."
 ```
 
 Evaluation
