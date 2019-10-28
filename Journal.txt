@@ -18,3 +18,13 @@ We all presented the various projects we had: these were either summarize, edit,
 
 Journal for Monday, October 7th
 Today we created a testing program for the createCar.sh program. This testing program tested whether or not a car can be created and stored in the database by creating a trial car, checking if a file with extension.txt was created, and checking if a record for the trip was made within the main car file. If all of this criteria was met, then the testing program would communicate "Passed" to the user. Otherwise, it would tell the user "Failed." Details of our challenges and a summary of the testing software can be found in the testing section of the README for this repository. 
+
+Reflection for Monday, October 28th
+1. What skills have I developed so far?
+  So far, I've learned a lot about how to organize my code in an efficient way. This way, I can minimize the amount I have to write and ensure my program runs smoothly. I've also learned a lot of new commands which increase my capabilties; for example, I've learned about for loops, while loops, man, etc. We've also learned about things other than commands such as man, diagrams, README, and how to record our program in a good manner. 
+  
+2. What has worked for you in the CS classroom so far?
+  So far, our method of learning has been working for me well. I've been grasping the subjects and because we have time at home to also practice, I seem to be understanding what's going on. I also like how whenever we have homework, we have enough time to get it done and we have opportunities to ask for classmates if we have questions.
+  
+3. What are some strategies of activities that you would change to achieve your best in the next six weeks?
+  I think that the class itself is working well for me and it would be fine if it stayed the same in the next six weeks. I do, however, want to learn more about what the IB computer science course is like. How will we be evaluated and what skills are really important?
