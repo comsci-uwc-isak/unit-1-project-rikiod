@@ -16,8 +16,9 @@ cd RentalCarApp
 
 #Creating Database folder and Scripts folder.
 mkdir db
-mkdir scripts
 mkdir tests
+cd ../SchoolWork/ISAK/G11/ComSci/process-journal-rikiod/Topic1/MinimalCarRental/RentalCarApp/
+cp -r scripts /Users/rikiodahlgren/Desktop/RentalCarApp
 
 echo "Installation complete."
 exit
