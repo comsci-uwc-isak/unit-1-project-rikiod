@@ -3,7 +3,7 @@
 Car Rental Minimal App
 ===========================
 
-A car rental management minimal app in Bash.
+A minimal car rental management app, coded in Bash.
 
 Contents
 -----
@@ -26,7 +26,9 @@ I will create a Bash program to manage all of this and help the business.
 **Proposed Solution:**
 I decided to use Bash to solve this problem because of the level of simplicity it brings. Since the client requires an extremely simple system which is easy to train multiple employees on how to use, the entire program harnesses simple functions and applications built into the computer. 
 
-There are only a few functions; however, this makes it easy to understand and Bash also makes us capable of expanding the program to encompass more aspects of the business if necessary. For this specific client, an online system isn’t necessary since all of the data can be stored locally at the store. Thus, it wouldn’t make sense to develop that function. Further, a Bash program requires no additional software (unless using WIndows, in which case, a Linux simulator is required) which again, ensures that the program is very user friendly and simple to use. 
+There are only a few functions; however, this makes it easy to understand and Bash also makes us capable of expanding the program to encompass more aspects of the business if necessary. For this specific client, an online system isn’t necessary since all of the data can be stored locally at the store. Thus, it wouldn’t make sense to develop that function. Further, a Bash program requires no additional software (unless using Windows, in which case, a Linux simulator is required) which again, ensures that the program is very user friendly and simple to use. 
+
+Additionally, I used GitHub to store this application because of its ease of use. GitHub's connectivity enables me to share this application with my classmates and teachers easily; it also allows sharing with other potential users. Moreover, GitHub's ability to make a well-formatted README section makes sure that no matter who observes my software, they'll be able to view my documentation and understand how it works and why it was created that way. 
 
 **Success Criteria:**
 1. A car can be created and stored in the database
