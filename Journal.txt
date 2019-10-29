@@ -28,3 +28,6 @@ Reflection for Monday, October 28th
   
 3. What are some strategies of activities that you would change to achieve your best in the next six weeks?
   I think that the class itself is working well for me and it would be fine if it stayed the same in the next six weeks. I do, however, want to learn more about what the IB computer science course is like. How will we be evaluated and what skills are really important?
+  
+Journal for Tuesday, October 29th
+  Today we created a program to list out the digits of a number (ones' place, hundreds' place, etc.). These commands used to find the digits will be useful in the future. After that, we continued work on the CarRentalProgram and shared our programs in order to learn from each others' work. 
