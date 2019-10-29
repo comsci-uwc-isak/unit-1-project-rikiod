@@ -146,6 +146,32 @@ fi
 exit
 ```
 
+### 4. Edit a car 
+The following 
+
+### 5. Delete a car
+Input: license plate --> output: maincarfile.txt deleted and licenseplate.txt deleted; communicated to user 
+
+This program works by utilizing the sed command. The program takes the argument provided by the user and is used in the line that says `sed -i ' ' "/$1/d" db/maincarfile.txt`. $1 is the argument so in this way, the program takes the license plate provided and deletes it from maincarfile.txt.
+
+Additionally, the individual license plate file is deleted by simply removing the file with the command `rm`. 
+
+```.sh 
+#!/bin/bash
+
+if [ $# -eq 1 ]; then
+       	#Deleting line from maincarfile
+	cd ..
+        sed -i '' "/$1/d" db/maincarfile.txt
+
+	#Deleting the plate file
+        cd db
+        rm  $1.txt
+else
+        echo "Invalid input: please enter the license plate number as an argument."
+fi
+```
+
 ### 6. Summarize the fleet's distance
 The following script finds the total distance traveled by all of the the cars in the car rental system.
 ```.sh
@@ -208,7 +234,7 @@ else
 	exit
 fi
 ```
-It is important to note that 
+It is important to note that the section regarding the location of the RentalCarApp, `cd /Users/rikiodahlgren/Desktop/` must be edited depending on where the program is currently stored. If the install program is used to download the program, it should default to downloading on the desktop. However, the section about the user (rikiodahlgren) will most likely need to be edited. 
 
 Evaluation
 -----------
