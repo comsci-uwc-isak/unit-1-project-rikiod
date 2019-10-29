@@ -146,28 +146,7 @@ fi
 exit
 ```
 
-### 4. Backing up the database 
-Inputs: name of location to backup (ex. hard drive name) 
-1. Obtain inputs 
-2. Check if the number of arguments (inputs, found with $#) is one, otherwise exit.
-3. Copy database to the input using the function cp -a <File> <Destination>.
-
-The following script creates a backup of the database in a designated location which is given to the system by the user in the form of an argument. For example, /Volumes/HARDDRIVENAME.
-``` .sh
-#!/bin/bash
-
-#This program will backup the entirity of the database folder within the MinimalCarRental application
-
-location=$1
-if [[ $# -ne 1 ]]; then
-        echo "Sorry, there was an error."
-        exit
-else
-        cp -a RentalCarApp/db $location
-fi
-```
-
-### 5. Summarize the fleet's distance
+### 6. Summarize the fleet's distance
 The following script finds the total distance traveled by all of the the cars in the car rental system.
 ```.sh
 #!/bin/bash
@@ -183,6 +162,53 @@ done
 
 echo "The total distance traveled by all cars is $sum km."
 ```
+
+### 7. Backing up the database 
+Inputs: name of location to backup (ex. hard drive name) 
+1. Obtain inputs 
+2. Check if the number of arguments (inputs, found with $#) is one, otherwise exit.
+3. Copy database to the input using the function cp -a <File> <Destination>.
+
+The following script creates a backup of the database in a designated location which is given to the system by the user in the form of an argument. For example, /Volumes/HARDDRIVENAME.
+
+``` .sh
+#!/bin/bash
+
+#This program will backup the entirity of the database folder within the MinimalCarRental application
+
+location=$1
+if [[ $# -ne 1 ]]; then
+        echo "Sorry, there was an error."
+        exit
+else
+        cp -a RentalCarApp/db $location
+fi
+```
+It is also important to note that depending on where the RentalCarApp folder is stored, the command `cp -a RentalCarApp/db $location` may need to be edited in order to copy the correct folder (for example, if the folder is downloaded on the desktop, then the command may have to be `cp -a Desktop/RentalCarApp/db $location`). 
+
+### 8. Uninstall the program
+The following program uninstalls the RentalCarApp program in its entirety.
+```.sh
+#!/bin/bash
+
+#This program deletes the RentalCarApp and all of it's data.
+
+echo "This program deletes the RentalCarApp and all of it's data."
+echo "Would you like to continue with deleting the program? Answer Y or N and press ENTER:"
+read answer 
+
+if [[ $answer == Y ]]; then
+	echo "Moving forward with deleting the program..."
+	cd /Users/rikiodahlgren/Desktop/
+	rm -rf RentalCarApp
+	echo "Successfully deleted."
+	exit
+else
+	echo "The RentalCarApp will not be deleted."
+	exit
+fi
+```
+It is important to note that 
 
 Evaluation
 -----------
@@ -217,5 +243,3 @@ For test 2, we effectively created a program which reliably ensures that the ins
 
 This testing program accurately determines whether or not the install.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works to fulfill the client's needs.
 
-### Test 3:
-**Testing the...**
