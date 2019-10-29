@@ -147,7 +147,39 @@ exit
 ```
 
 ### 4. Edit a car 
-The following 
+Input: license plate, car model, car color, occupancy --> edited car
+This program takes the data that the user wants to edit as arguments and replaces the previous data about the car with it. It functions very similarly to the delete function (see #5) by deleting the line within the maincarfile.txt. Then, after that, it essentially does the same as creating a car (see #2). 
+
+```.sh
+#!/bin/bash
+#This program edit the information of an exiting car in the
+#maincarfile
+#user enters [license place] [model] [color] [passengers]
+
+if [ $# -ne 4 ]; then
+  echo "Error with the number of arguments"
+  echo "Enter License Maker Model Passengers"
+  exit
+fi
+
+license=$1
+maker=$2
+model=$3
+pp=$4
+
+cd ../db
+
+if [ ! -f "$license.txt" ]; then
+  echo "File not found!"
+fi
+
+#find the line with the given car plate and delete it
+sed -i '' "/^$license/d" maincarfile.txt
+#add the new information
+echo "$license $maker $model $pp" >> maincarfile.txt
+cd ../scripts
+bash frame "Car edited successfully"
+```
 
 ### 5. Delete a car
 Input: license plate --> output: maincarfile.txt deleted and licenseplate.txt deleted; communicated to user 
