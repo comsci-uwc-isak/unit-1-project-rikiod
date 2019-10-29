@@ -12,11 +12,9 @@ passengers=$4
 
 if [[ $# -ne 4 ]]; then
 	echo "Sorry, there was an error. Next time, please enter the license plate number, the model, the color, and the number of passengers."
-	exit
 else 
-	echo "$plate $model $color $passengers" >> RentalCarApp/db/maincarfile.txt
-	echo " " >> RentalCarApp/db/$plate.txt
+	echo "$plate $model $color $passengers" >> db/maincarfile.txt
+	echo " " >> db/$plate.txt
 	echo "The car with the license plate $plate has been added."
 	echo "To add another car, run this same program with the arguments plate, model, color, and passengers."
-	exit
 fi
