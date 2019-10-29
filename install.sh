@@ -17,6 +17,7 @@ cd RentalCarApp
 #Creating Database folder and Scripts folder.
 mkdir db
 mkdir scripts
+mkdir tests
 
 echo "Installation complete."
 exit
