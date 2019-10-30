@@ -271,12 +271,18 @@ fi
 It is important to note that the section regarding the location of the RentalCarApp, `cd /Users/rikiodahlgren/Desktop/` must be edited depending on where the program is currently stored. If the install program is used to download the program, it should default to downloading on the desktop. However, the section about the user (rikiodahlgren) will most likely need to be edited. 
 
 ### 9. Man pages
-Man pages, short for manual pages, are forms of software documentation. In this CarRentalApp program, man pages were created for all eight commands (install, createCar, recordTrip, editCar, deleteCar, backup, summaryTotal and uninstall). These man pages contain 
-Evaluation
------------
+Man pages, short for manual pages, are forms of software documentation. In this CarRentalApp program, man pages were created for six of the eight commands (install, createCar, recordTrip, editCar, deleteCar, and backup). These man pages contain information about usage by including a description, synopsis, examples, and possible contact methods if further questions persist. 
 
-### Test 1: 
-**Testing the createCar.sh function. Was a file with extension txt (a log of the license plate) created and was a record for the car created within the mainfile?**
+The man pages for this RentalCarApp can be found in this repository under the manPages folder. These man pages were classified with the suffix 6, used for games, because the RentalCarApp is similar to a game. While it could be used for an actual rental car agency, its current limited capabilities render it more of a project or game. Thus, the man pages were stored in man6. 
+
+Lastly, the decision to use man pages themselves rather than other forms of documentation such as an online or paper manual was made because of the fact that it is essentially built in with the program and doesn't require internet connection. The convenience of being able to simply inquire about a command within the application itself is very important and renders man pages more convenient and accessible than other methods such as an online or paper manual. 
+
+### 10. Testing
+**Summary:** 
+Tests were made (see tests folder within repository) to test the createCar and install function. Tests could be further created to test all other capabilities within the application such as recordTrip, backup, etc. Details about the functionality of the tests and their usage is recorded in the following subsections.
+
+**Test 1:**
+Testing the createCar.sh function. Was a file with extension txt (a log of the license plate) created and was a record for the car created within the mainfile?
 
 The first run of the program had a few issues: firstly, the test file needed to move to the main folder by using the command `cd ../`. This is necessary because the `createCar.sh` function resides in the main folder whereas the test file is inside the test folder.
 
@@ -291,8 +297,8 @@ For test 1, we effectively created a program which reliably ensures that the cre
 
 This testing program accurately determines whether or not the createCar.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works seamlessly and meets the client's needs. 
 
-### Test 2:
-**Testing the install.sh function. Was a directory titled RentalCarApp created on the desktop, was a directory called db formed within the RentalCarApp folder, and was a directory called scripts formed inside the RentalCarApp folder as well?**
+**Test 2:**
+Testing the install.sh function. Was a directory titled RentalCarApp created on the desktop, was a directory called db formed within the RentalCarApp folder, and was a directory called scripts formed inside the RentalCarApp folder as well?
 
 There were two issues when coding the program to test the install.sh function; however, they were both fairly minor and were easy to solve.
 
@@ -304,4 +310,8 @@ if [ -f RentalCarApp ]; then` but I realized that the argument -f meant the prog
 For test 2, we effectively created a program which reliably ensures that the install.sh program works as intended. We performed dynamic, alpha, and white-box testing.
 
 This testing program accurately determines whether or not the install.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works to fulfill the client's needs.
+
+
+Evaluation
+-----------
 
