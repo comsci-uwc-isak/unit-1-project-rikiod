@@ -270,6 +270,8 @@ fi
 ```
 It is important to note that the section regarding the location of the RentalCarApp, `cd /Users/rikiodahlgren/Desktop/` must be edited depending on where the program is currently stored. If the install program is used to download the program, it should default to downloading on the desktop. However, the section about the user (rikiodahlgren) will most likely need to be edited. 
 
+### 9. Man pages
+Man pages, short for manual pages, are forms of software documentation. In this CarRentalApp program, man pages were created for all eight commands (install, createCar, recordTrip, editCar, deleteCar, backup, summaryTotal and uninstall). These man pages contain 
 Evaluation
 -----------
 
