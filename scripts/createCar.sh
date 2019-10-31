@@ -5,16 +5,18 @@
 
 echo $*
 
+#Ensuring four arguments were entered
+if [[ ($# -ne 4) ]]; then
+  echo "Incorrect input. Please enter license plate, model, color, and number of passengers."
+  exit
+fi
+
 plate=$1
 model=$2
 color=$3
 passengers=$4
 
-if [[ $# -ne 4 ]]; then
-	echo "Sorry, there was an error. Next time, please enter the license plate number, the model, the color, and the number of passengers."
-else 
-	echo "$plate $model $color $passengers" >> db/maincarfile.txt
-	echo " " >> db/$plate.txt
-	echo "The car with the license plate $plate has been added."
-	echo "To add another car, run this same program with the arguments plate, model, color, and passengers."
-fi
+#Putting car's info on maincarfile.txt
+echo "$plate $model $color $passengers" >> ~/Desktop/RentalCarApp/db/maincarfile.txt
+echo "" > ~/Desktop/RentalCarApp/db/$plate.txt
+echo "Car created successfully."
