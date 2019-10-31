@@ -377,15 +377,12 @@ This testing program accurately determines whether or not the install.sh program
 Evaluation
 -----------
 
-### Success Criteria 
-1. A car can be created and stored in the database
-2. A car's information can be edited
-3. A car can be deleted from the database
-4. The installation is ***simple, meaning it's a one-step process***
-5. A summary (total/average distance traveled) can be generated for a particular car
-6. Trips can be recorded and stored for an existing car.
-7. A basic database system is implemented.
-8. A basic backup function is available. 
+### Success Criteria Fulfilment
+The success criteria as detailed in the planning section of this document have all been met.
+
+Using the createCar function, a car was be created and successfuly stored in the maincarfile.txt. A car's information can also be edited using the edit function. When the edit function is used along with the proper arguments inputted, then the license plate number, make, color, and passengers can all be edited. A car can also be deleted from the database using the delete function and then entering the license plate as an argument. This removes the car from the maincarfile.txt. The installation is also quite simple because it just requires one step: performing the actual command. The summary function also exists when summary.sh is used: writing <all> or <license plate> as an argument enables summaries to be generated for each the entire fleet or fot a particular car. It is important to note, however, that the average distance traveled can't be generated for a particular car. Trips can be recorded and stored for an existing car using the recordTrip function and all of this data is stored in a basic database system. Using the backup functionality, all of the data in the database can be backed up to other locations in a computer or in a hard drive specified by the user. 
+
+The system diagram and all of the eight commands detailed in the development section further detail the way that the RentalCarApp is organized and created, thus showing how all of the success criteria were met. Further evidence to verify that these commands genuinely work in Bash can be found within this repository under the folders "scripts."
 
 ### Future Improvements
 While this program is definitely functional and a great option for those looking for minimal car rental management systems, it also has a lot of aspects where it could grow and have more sophisticated features. 
