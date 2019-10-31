@@ -47,8 +47,7 @@ Design
 **Fig. 1** First sketch of the system showing the main input/output and host computer with details such as possible actions and file organization. 
 
 **Testing Plan:**
-
-![Testing Diagram] (TestingProcess.png)
+![Testing Diagram](TestingProcess.png)
 **Fig. 2** Diagram of how testing will be performed to ensure success criteria as listed above were met. 
 
 Development
@@ -275,6 +274,7 @@ done < "$file.txt"
 cd ../scripts
 echo "The car with license plate $file traveled $total km."
 ```
+It should be noted that this summarize program doesn't find the average distance covered by a singular car. 
 
 ### 7. Backing up the database 
 Inputs: name of location to backup (ex. hard drive name) 
