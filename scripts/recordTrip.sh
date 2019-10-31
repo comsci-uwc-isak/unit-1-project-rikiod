@@ -1,26 +1,28 @@
 #!/bin/bash
 
 #This program enables users of the Minimal Car Rental application to record a trip with a car. 
-#The trip will be logged in trips.txt
+#The trip will be logged in the car's plate.txt file.
 
 echo $*
 
-distance=$1
-startDate=$2
-finishDate=$3
-licensePlate=$4
+plate=$1
+distance=$2
+dateOut=$3
+dateIn=$4
 
-if [[ $# -ne 4 ]]; then
-	echo "Sorry, there was an error. Next time, please enter the distance (km), the start date, the finish date, and the license plate."
-  exit
-else
+cd ~/Desktop/RentalCarApp/db/
+
+#Ensuring file exists and four arguments were entered
+if [[ ($# -ne 4) ]]; then
+  echo "Please enter license plate number, distance (km), date out, and date in."
   cd ../db
-	if [[ -f $licensePlate.txt ]]; then #Checking if the car exists or not
-		echo "$distance $startDate $finishDate" >> $licensePlate".txt"
-		echo "$distance $startDate $finishDate $licensePlate" >> trips.txt
-		echo "The $distance km trip has been logged on the car with plate $licensePlate."
-		exit
-	else
-		echo "Sorry, that car hasn't been created yet."
-	fi
+
+elif [ ! -f "$1.txt" ]; then
+  echo "Car doesn't exist, please try again."
+
+#Creating plate.txt file with car's data.
+else
+  echo "$distance $dateOut $dateIn" >> $plate.txt
+  cd ../scripts
+  echo "Trip successfully recorded."
 fi
