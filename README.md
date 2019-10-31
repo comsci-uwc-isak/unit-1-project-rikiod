@@ -48,7 +48,8 @@ Design
 
 **Testing Plan:**
 
-**Fig. 2** Diagram of how testing will be performed 
+![Testing Diagram] (TestingProcess.png)
+**Fig. 2** Diagram of how testing will be performed to ensure success criteria as listed above were met. 
 
 Development
 --------
@@ -93,25 +94,25 @@ The following script inputs the data for a new car into a file called maincarefi
 #!/bin/bash
 
 #This program enables users of the Minimal Car Rental software to create a car in the system.
-#The car will be logged in maincarfile.txt.
+#The car will be logged in maincarfile.txt. 
 
 echo $*
+
+#Ensuring four arguments were entered
+if [[ ($# -ne 4) ]]; then
+  echo "Incorrect input. Please enter license plate, model, color, and number of passengers."
+  exit
+fi
 
 plate=$1
 model=$2
 color=$3
 passengers=$4
 
-if [[ $# -ne 4 ]]; then
-        echo "Sorry, there was an error. Next time, please enter the license plate number, the mode$
-        exit
-else
-        echo "$plate $model $color $passengers" >> RentalCarApp/db/maincarfile.txt
-        echo " " >> RentalCarApp/db/$plate.txt
-        echo "The car with the license plate $plate has been added."
-        echo "To add another car, run this same program with the arguments plate, model, color, and$
-        exit
-fi
+#Putting car's info on maincarfile.txt
+echo "$plate $model $color $passengers" >> ~/Desktop/RentalCarApp/db/maincarfile.txt
+echo "" > ~/Desktop/RentalCarApp/db/$plate.txt
+echo "Car created successfully."
 ```
 
 ### 3. Recording a new trip 
@@ -119,37 +120,36 @@ Inputs: distance, start date, end date, license plate --> output: logged in life
 1. Get inputs (either by read or with arguments)
 2. Check if the number of arguments is 4, otherwise exit. 
 3. Ensure the car license plate is already logged in maincarfile.txt, otherwise exit. 
-3. Write to trips.txt with an extra line. 
 
-The following script records the trip of a car in a file called trips.txt. 
 ``` .sh
 #!/bin/bash
 
-#This program enables users of the Minimal Car Rental application to record a trip with a car.
-#The trip will be logged in trips.txt
+#This program enables users of the Minimal Car Rental application to record a trip with a car. 
+#The trip will be logged in the car's plate.txt file.
 
 echo $*
 
-distance=$1
-startDate=$2
-finishDate=$3
-licensePlate=$4
+plate=$1
+distance=$2
+dateOut=$3
+dateIn=$4
 
-if [[ $# -ne 4 ]]; then
-        echo "Sorry, there was an error. Next time, please enter the distance (km), the start date,$
-        exit
+cd ~/Desktop/RentalCarApp/db/
+
+#Ensuring file exists and four arguments were entered
+if [[ ($# -ne 4) ]]; then
+  echo "Please enter license plate number, distance (km), date out, and date in."
+  cd ../db
+
+elif [ ! -f "$1.txt" ]; then
+  echo "Car doesn't exist, please try again."
+
+#Creating plate.txt file with car's data.
 else
-        if [[ -f $licensePlate.txt ]]; then #Checking if the car exists or not
-                echo "$distance $startDate $finishData" >> RentalCarApp/db/trips.txt
-                bash "The $distance km trip has been logged on the car with plate $licensePlate."
-                echo "To add another car, run this program with the arguments distance, start date,$
-                exit
-        else
-                echo "Sorry, that car hasn't been created yet."
-                exit
-        fi
+  echo "$distance $dateOut $dateIn" >> $plate.txt
+  cd ../scripts
+  echo "Trip successfully recorded."
 fi
-exit
 ```
 
 ### 4. Edit a car 
@@ -158,9 +158,8 @@ This program takes the data that the user wants to edit as arguments and replace
 
 ```.sh
 #!/bin/bash
-#This program edit the information of an exiting car in the
-#maincarfile
-#user enters [license place] [model] [color] [passengers]
+#This program edit the information of an exiting car in maincarfile.txt
+#User enters [license place] [model] [color] [passengers]
 
 if [ $# -ne 4 ]; then
   echo "Error with the number of arguments"
@@ -210,21 +209,71 @@ else
 fi
 ```
 
-### 6. Summarize the fleet's distance
-The following script finds the total distance traveled by all of the the cars in the car rental system.
+### 6. Summarize the fleet and/or an individual car's distance
+The following script finds the total distance traveled by all of the the cars in the car rental system if "all" is entered as an argument. If a license plate is entered as an arugment, then the program will find the total distance traveled by that particular car.
 ```.sh
 #!/bin/bash
-#This program will find the total distance traveled by all of the cars in the car rental system.
 
-cd ../db
+#This program will find the total distance traveled by all the cars if "all" is entered.
+#This program will find the total distance traveled by a certain car specified by the user (enter the license plate).
 
-sum=0
-for num in $(cat trips.txt)
+cd../db
+
+#Ensuring correct arguments were entered.
+if [ $# -ne 1 ]; then
+    echo "Enter license plate number or the word all."
+    exit
+fi
+
+file=$1
+
+#If "all" was entered as an argument, finding total distance traveled by all cars.
+if [ $file == all ]; then
+    total=0
+    #Reading file; looking at each line 
+    #Looping through all txt files
+    for f in *.txt;
     do
-        ((sum+=num))
-done
+        if  [[ ($f == "maincarfile.txt") ]]; then
+            continue
+        fi
 
-echo "The total distance traveled by all cars is $sum km."
+        while read line;
+        do
+          #Going through each line word by word 
+          for km in $line
+          do
+            (( total=$km+$total ))
+            break
+          done
+        done < "$f"
+    done
+
+    cd ../scripts
+    cd scripts
+    echo "The total distance traveled by all the cars was $total km."
+    exit
+
+elif [ ! -f "$file.txt" ]; then
+  echo "The car, $file, doesn't exist."
+  exit
+fi
+
+#Calculating total distance car specified by user.
+total=0
+
+while read line;
+do
+  for km in $line
+  do
+    (( total=$km+$total ))
+    #After first cycle, loop will break
+    break
+  done
+done < "$file.txt"
+
+cd ../scripts
+echo "The car with license plate $file traveled $total km."
 ```
 
 ### 7. Backing up the database 
