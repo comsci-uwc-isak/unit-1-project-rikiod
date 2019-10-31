@@ -44,7 +44,11 @@ Design
 ---------
 **First Sketch of the System:**
 ![System Diagram](SystemDiagram.png)
-**Fig. 1** First sketch of the system showing the main input/output and host computer with details such as actions and organization.
+**Fig. 1** First sketch of the system showing the main input/output and host computer with details such as possible actions and file organization. 
+
+**Testing Plan:**
+
+**Fig. 2** Diagram of how testing will be performed 
 
 Development
 --------
