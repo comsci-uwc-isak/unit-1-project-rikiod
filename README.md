@@ -378,6 +378,14 @@ Evaluation
 -----------
 
 ### Success Criteria 
+1. A car can be created and stored in the database
+2. A car's information can be edited
+3. A car can be deleted from the database
+4. The installation is ***simple, meaning it's a one-step process***
+5. A summary (total/average distance traveled) can be generated for a particular car
+6. Trips can be recorded and stored for an existing car.
+7. A basic database system is implemented.
+8. A basic backup function is available. 
 
 ### Future Improvements
 While this program is definitely functional and a great option for those looking for minimal car rental management systems, it also has a lot of aspects where it could grow and have more sophisticated features. 
