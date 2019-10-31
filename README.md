@@ -11,6 +11,7 @@ Contents
   1. [Design](#design)
   1. [Development](#development)
   1. [Evalution](#evaluation)
+  1. [Citations](#citations)
 
 Planning
 ----------
@@ -42,14 +43,17 @@ Additionally, I used GitHub to store this application because of its ease of use
 
 Design
 ---------
-**First Sketch of the System:**
+### First Sketch of the System:
 ![System Diagram](SystemDiagram.png)
 **Fig. 1** First sketch of the system showing the main input/output and host computer with details such as possible actions and file organization. 
 
-**Testing Plan:**
+### Testing Plan: 
 
 ![Testing Diagram](TestingProcess.png)
+
 **Fig. 2** Diagram of how testing will be performed to ensure success criteria as listed above were met. 
+
+### Steps for Development/Pseudocode
 
 Development
 --------
@@ -90,6 +94,7 @@ Inputs: plate number, model, color, number of passengers --> output: logged in f
 
 The following script inputs the data for a new car into a file called maincarefile.txt and records the license plate number in  a file called plate.txt. 
 
+In the beginning, this program posed some difficulties in finding how to send information to a specific file. However, I found that the ">>" function can do that quite easily. 
 ``` .sh 
 #!/bin/bash
 
@@ -163,7 +168,7 @@ This program takes the data that the user wants to edit as arguments and replace
 
 if [ $# -ne 4 ]; then
   echo "Error with the number of arguments"
-  echo "Enter License Maker Model Passengers"
+  echo "Enter License Model Color Passengers"
   exit
 fi
 
@@ -193,6 +198,7 @@ This program works by utilizing the sed command. The program takes the argument 
 
 Additionally, the individual license plate file is deleted by simply removing the file with the command `rm`. 
 
+It was difficult to figure out how to delete a specific car in the beginning until I found the "sed" functionality which is typically used for replacement for deletion.
 ```.sh 
 #!/bin/bash
 
@@ -211,6 +217,8 @@ fi
 
 ### 6. Summarize the fleet and/or an individual car's distance
 The following script finds the total distance traveled by all of the the cars in the car rental system if "all" is entered as an argument. If a license plate is entered as an arugment, then the program will find the total distance traveled by that particular car.
+
+The summarize program was quite hard because specific lines had to be found within the maincarfile.txt; however, I was able to use while loops and have the program loop through each line reading word by word. 
 ```.sh
 #!/bin/bash
 
@@ -368,4 +376,25 @@ This testing program accurately determines whether or not the install.sh program
 
 Evaluation
 -----------
+
+### Success Criteria 
+
+### Future Improvements
+While this program is definitely functional and a great option for those looking for minimal car rental management systems, it also has a lot of aspects where it could grow and have more sophisticated features. 
+
+The uninstall, delete, create car, and record trip functions are quite simple so don't necesarrily need to be improved, even if the car rental agency were to grow and wanted to employ more complex functionalities. However, the delete function could be improved to allow deletion of trips. Meanwhile, the create car function could be improved so that pricing was associated with each car and calculated as such when a trip was recorded. On top of that, if a clients' name was associated with recorded trips, then the accounting for the Minimal Car Rental would be a lot more simple. 
+
+The install and backup functions are all fairly simplistic as well so while they could be improved, their functionality is already quite good. However, the install function could be made so that the location to install could be specified. In addition, backup could be simplified so that the suffix of "Volumes/" would not need to be written as an argument: instead, simply the name of the hard drive name would need to be entered. 
+
+The summarize and edit functions posed the most difficulties to me and as such, they also have the most room for improvement. While the summarize function is able to get the total distance for an individual car and for the entire fleet, it would be better if it were able to summarize data relating to the days rented out. In this way, it could see which cars were most popular and also which cars may require service most often due to their use. For the edit program, it would be better if individual trips could be edited so that typos could be corrected more easily. On top of that, the entire way of editing could be more easy for the user if rather than having to enter all the aspects of a car (license plate, car, model, passengers), only the license plate would have to be entered since that number typically stays constant on all cars.
+
+Citations
+---------
+While the majority of the functions within Bash needed for this project were taught in the G11 CS class at UWC ISAK Japan, some of the functionalities also posed difficulties and required further research. As such, many additional sources were used:  
+G, Mike. “Loops for, While, and Until.” BASH Programming - Introduction HOW-TO: Loops for, While and Until, 2018, tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html.
+
+“Man Page.” Wikipedia, Wikimedia Foundation, 22 Aug. 2019, en.wikipedia.org/wiki/Man_page.
+
+Rajput, Akshay, and Mohak Agrawal. “Sed Command in Linux/Unix with Examples.” GeeksforGeeks, 27 May 2019, www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/.
+
 
