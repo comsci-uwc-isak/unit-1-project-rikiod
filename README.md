@@ -47,6 +47,7 @@ Design
 **Fig. 1** First sketch of the system showing the main input/output and host computer with details such as possible actions and file organization. 
 
 **Testing Plan:**
+
 ![Testing Diagram](TestingProcess.png)
 **Fig. 2** Diagram of how testing will be performed to ensure success criteria as listed above were met. 
 
