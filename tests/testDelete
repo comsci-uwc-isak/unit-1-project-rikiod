@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#This program tests to see if the delete functionality works correctly.
+
+cd ..
+cd scripts
+
+#Creating car
+bash createCar.sh XYZ789 Tesla Black 7
+
+#Deleting car
+bash deleteCar.sh XYZ789
+
+cd ..
+cd db
+
+#Checking to see if file has been deleted
+if [[ -f "XYZ789" ]]; then
+  echo "Test failed: car was not deleted properly."
+else
+  echo "Test passed: car was deleted properly."
+fi
+
