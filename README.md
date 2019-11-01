@@ -396,6 +396,7 @@ The summarize and edit functions posed the most difficulties to me and as such, 
 Citations
 ---------
 While the majority of the functions within Bash needed for this project were taught in the G11 CS class at UWC ISAK Japan, some of the functionalities also posed difficulties and required further research. As such, many additional sources were used:  
+
 G, Mike. “Loops for, While, and Until.” BASH Programming - Introduction HOW-TO: Loops for, While and Until, 2018, tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html.
 
 “Man Page.” Wikipedia, Wikimedia Foundation, 22 Aug. 2019, en.wikipedia.org/wiki/Man_page.
