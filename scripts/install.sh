@@ -14,11 +14,12 @@ mkdir RentalCarApp
 #Moving inside the RentalCarApp folder.
 cd RentalCarApp
 
-#Creating Database folder and Scripts folder.
+#Creating database folder
 mkdir db
-mkdir tests
+
+#Copying in tests and scripts
 cd ../SchoolWork/ISAK/G11/ComSci/process-journal-rikiod/Topic1/MinimalCarRental/RentalCarApp/
 cp -r scripts /Users/rikiodahlgren/Desktop/RentalCarApp
+cp -r tests /Users/rikiodahlgren/Desktop/RentalCarApp
 
 echo "Installation complete."
-exit
