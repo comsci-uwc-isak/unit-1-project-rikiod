@@ -421,6 +421,10 @@ Evaluation
 ### Success Criteria Fulfilment
 The success criteria as detailed in the planning section of this document have all been met.
 
+![Success Criteria](successCriteria.png)
+
+**Fig 4** This table visually shows how this RentalCarApp fulfills all of the success criteria as detailed in the planning section. 
+
 Using the createCar function, a car was be created and successfuly stored in the maincarfile.txt. A car's information can also be edited using the edit function. When the edit function is used along with the proper arguments inputted, then the license plate number, make, color, and passengers can all be edited. A car can also be deleted from the database using the delete function and then entering the license plate as an argument. This removes the car from the maincarfile.txt. The installation is also quite simple because it just requires one step: performing the actual command. The summary function also exists when summary.sh is used: writing <all> or <license plate> as an argument enables summaries to be generated for each the entire fleet or fot a particular car. It is important to note, however, that the average distance traveled can't be generated for a particular car. Trips can be recorded and stored for an existing car using the recordTrip function and all of this data is stored in a basic database system. Using the backup functionality, all of the data in the database can be backed up to other locations in a computer or in a hard drive specified by the user. 
 
 The system diagram and all of the eight commands detailed in the development section further detail the way that the RentalCarApp is organized and created, thus showing how all of the success criteria were met. Further evidence to verify that these commands genuinely work in Bash can be found within this repository under the folders "scripts."
