@@ -58,7 +58,12 @@ Design
 Development
 --------
 ### 1. Script to install the app
-The following script creates the app folder and inside, it creates a folder for data and for scripts. 
+Steps:
+1. Change directory to desktop
+2. Make RentalCarApp folder and create db folder within. 
+3. Copy scripts and tests folder from existing application into new RentalCarApp folder.
+
+The following script creates the RentalCarApp fodler and all of its contents.
 ```.sh
 #!/bin/bash
 
@@ -76,23 +81,26 @@ mkdir RentalCarApp
 #Moving inside the RentalCarApp folder.
 cd RentalCarApp
 
-#Creating Database folder and Scripts folder.
+#Creating database folder
 mkdir db
-mkdir tests
+
+#Copying in tests and scripts
 cd ../SchoolWork/ISAK/G11/ComSci/process-journal-rikiod/Topic1/MinimalCarRental/RentalCarApp/
 cp -r scripts /Users/rikiodahlgren/Desktop/RentalCarApp
+cp -r tests /Users/rikiodahlgren/Desktop/RentalCarApp
 
 echo "Installation complete."
 exit
 ```
 
 ### 2. Creating a new car
-Inputs: plate number, model, color, number of passengers --> output: logged in file 
-
+Steps:
 1. Get inputs (either by read or with arguments)
 2. Check if the number of arguments is 4, otherwise exit. if $# -eq 4; then continue, else exit
 3. Write to main file with an extra line. echo "    " >> maincarfile.txt
 4. Create car trip file with licenseplate.txt. echo "    " >> plate.txt
+
+Inputs: plate number, model, color, number of passengers --> output: logged in file 
 
 The following script inputs the data for a new car into a file called maincarefile.txt and records the license plate number in  a file called plate.txt. 
 
@@ -123,10 +131,12 @@ echo "Car created successfully."
 ```
 
 ### 3. Recording a new trip 
-Inputs: distance, start date, end date, license plate --> output: logged in life
+Steps:
 1. Get inputs (either by read or with arguments)
 2. Check if the number of arguments is 4, otherwise exit. 
 3. Ensure the car license plate is already logged in maincarfile.txt, otherwise exit. 
+
+Inputs: distance, start date, end date, license plate --> output: logged in life
 
 ``` .sh
 #!/bin/bash
@@ -160,7 +170,13 @@ fi
 ```
 
 ### 4. Edit a car 
+Steps: 
+1. Find out which car needs to be edited from user's arguments
+2. Delete existing car
+3. Create new replacement car
+
 Input: license plate, car model, car color, occupancy --> edited car
+
 This program takes the data that the user wants to edit as arguments and replaces the previous data about the car with it. It functions very similarly to the delete function (see #5) by deleting the line within the maincarfile.txt. Then, after that, it essentially does the same as creating a car (see #2). 
 
 ```.sh
@@ -194,6 +210,11 @@ bash frame "Car edited successfully"
 ```
 
 ### 5. Delete a car
+Steps:
+1. Find out which car needs to be deleted from user
+2. Move to database and delete license plate line from maincarfile.txt
+3. Delete individual plate file
+
 Input: license plate --> output: maincarfile.txt deleted and licenseplate.txt deleted; communicated to user 
 
 This program works by utilizing the sed command. The program takes the argument provided by the user and is used in the line that says `sed -i ' ' "/$1/d" db/maincarfile.txt`. $1 is the argument so in this way, the program takes the license plate provided and deletes it from maincarfile.txt.
@@ -218,6 +239,11 @@ fi
 ```
 
 ### 6. Summarize the fleet and/or an individual car's distance
+Steps:
+1. Find out from user if program should summarize all cars or for an individual car
+2. Loop through each line and add to find summary of all cars if "all" is entered as an argument
+3. Loop through each line and add when license plate is detected if license plate is entered as an argument.
+
 The following script finds the total distance traveled by all of the the cars in the car rental system if "all" is entered as an argument. If a license plate is entered as an arugment, then the program will find the total distance traveled by that particular car.
 
 The summarize program was quite hard because specific lines had to be found within the maincarfile.txt; however, I was able to use while loops and have the program loop through each line reading word by word. 
@@ -288,10 +314,12 @@ echo "The car with license plate $file traveled $total km."
 It should be noted that this summarize program doesn't find the average distance covered by a singular car. 
 
 ### 7. Backing up the database 
-Inputs: name of location to backup (ex. hard drive name) 
+Steps:
 1. Obtain inputs 
 2. Check if the number of arguments (inputs, found with $#) is one, otherwise exit.
 3. Copy database to the input using the function cp -a <File> <Destination>.
+	
+Inputs: name of location to backup (ex. hard drive name) 
 
 The following script creates a backup of the database in a designated location which is given to the system by the user in the form of an argument. For example, /Volumes/HARDDRIVENAME.
 
@@ -311,6 +339,11 @@ fi
 It is also important to note that depending on where the RentalCarApp folder is stored, the command `cp -a RentalCarApp/db $location` may need to be edited in order to copy the correct folder (for example, if the folder is downloaded on the desktop, then the command may have to be `cp -a Desktop/RentalCarApp/db $location`). 
 
 ### 8. Uninstall the program
+Steps:
+1. Ensure user wants to delete program
+2. Move to location of RentalCarApp
+3. Remove folder and all of its contents
+
 The following program uninstalls the RentalCarApp program in its entirety.
 ```.sh
 #!/bin/bash
@@ -374,6 +407,8 @@ if [ -f RentalCarApp ]; then` but I realized that the argument -f meant the prog
 For test 2, we effectively created a program which reliably ensures that the install.sh program works as intended. We performed dynamic, alpha, and white-box testing.
 
 This testing program accurately determines whether or not the install.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works to fulfill the client's needs.
+
+**Test 3:**
 
 
 Evaluation
