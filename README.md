@@ -54,6 +54,9 @@ Design
 **Fig. 2** Diagram of how testing will be performed to ensure success criteria as listed above were met. 
 
 ### Steps for Development/Pseudocode
+![Flow Diagrams](FlowDiagrams.png)
+
+**Fig 3** Flow diagrams of how the install, create car, and uninstall functionalities will work. 
 
 Development
 --------
