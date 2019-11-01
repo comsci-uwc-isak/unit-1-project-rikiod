@@ -249,7 +249,8 @@ Steps:
 
 The following script finds the total distance traveled by all of the the cars in the car rental system if "all" is entered as an argument. If a license plate is entered as an arugment, then the program will find the total distance traveled by that particular car.
 
-The summarize program was quite hard because specific lines had to be found within the maincarfile.txt; however, I was able to use while loops and have the program loop through each line reading word by word. 
+The summarize program was quite hard because specific lines had to be found within the maincarfile.txt; however, I was able to use while loops and have the program loop through each line reading word by word. For example, the use of `for f in .txt` effectively loops through all the text files in the folder. Then, the code `while read line; do for km in $line` reads all the words by utilizing the while loop to look through all of the file's lines and the for loop to look at every word in each individual line.
+
 ```.sh
 #!/bin/bash
 
