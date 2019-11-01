@@ -65,11 +65,11 @@ The following script creates the app folder and inside, it creates a folder for 
 #This file creates the folder structure for the Minimal Car Rental app.
 
 echo "Starting the installation:"
-echo "Type the path where you would like to install and press ENTER."
-read path
+echo "Downloading on desktop..."
 
 #Moving to the desired location.
-cd $path
+cd /Users/rikiodahlgren/Desktop
+
 #Create App folder.
 mkdir RentalCarApp
 
@@ -78,7 +78,9 @@ cd RentalCarApp
 
 #Creating Database folder and Scripts folder.
 mkdir db
-mkdir scripts
+mkdir tests
+cd ../SchoolWork/ISAK/G11/ComSci/process-journal-rikiod/Topic1/MinimalCarRental/RentalCarApp/
+cp -r scripts /Users/rikiodahlgren/Desktop/RentalCarApp
 
 echo "Installation complete."
 exit
