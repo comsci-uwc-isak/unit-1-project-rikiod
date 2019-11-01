@@ -49,7 +49,7 @@ Design
 
 ### Testing Plan: 
 
-![Testing Diagram](TestingProcess.png)
+![Testing Diagram](FINALtest.png)
 
 **Fig. 2** Diagram of how testing will be performed to ensure success criteria as listed above were met. 
 
