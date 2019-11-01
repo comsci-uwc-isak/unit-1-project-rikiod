@@ -413,7 +413,9 @@ For test 2, we effectively created a program which reliably ensures that the ins
 This testing program accurately determines whether or not the install.sh program is functioning correctly and communicates it to the user well. This is crucial to ensuring that the final MinimalCarApp product works to fulfill the client's needs.
 
 **Test 3:**
+Testing the deleteCar.sh function. Was the car properly deleted from the maincarfile.txt and was the plate.txt file deleted as well? 
 
+The only main issue found when coding this program was with the file organization. There was unnecessary `cd` commands which made it so that when running the createCar and deleteCar program, they could not be found. As such, the test didn't work properly. However, once that was fixed, the test worked properly. 
 
 Evaluation
 -----------
