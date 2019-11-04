@@ -31,3 +31,11 @@ Reflection for Monday, October 28th
   
 Journal for Tuesday, October 29th
   Today we created a program to list out the digits of a number (ones' place, hundreds' place, etc.). These commands used to find the digits will be useful in the future. After that, we continued work on the CarRentalProgram and shared our programs in order to learn from each others' work. 
+  
+  Reflection for Wednesday, October 30th
+  Today we delegated studnets for each command within our car project. This way, if anybody had questions about a specific command, they could ask that specific member about the information. We continued going over the guidelines within the rubric about what we have to do and realized if we had any questions, we could get it done. 
+  
+  Reflection for Friday, November 1st
+     Today we had free time to work on our Minimal Car Project. We continued to ask questions to the delegates if needed and we also went over the rubric. Towards the end of the class, I also had an opportunity to showcase my program to Dr. Pinzon and show him my repository as well. This was the end of our project. 
+  
+
