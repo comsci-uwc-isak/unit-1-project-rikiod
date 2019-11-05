@@ -1,5 +1,10 @@
 ![CarRental](logo.png)
-
+```.py
+Marks=26
+Demo=4
+Total=(Marks+Demo)=30
+```
+**Graded on Nov 5**
 Car Rental Minimal App
 ===========================
 
@@ -41,6 +46,16 @@ Additionally, I used GitHub to store this application because of its ease of use
 7. A basic database system is implemented.
 8. A basic backup function is available. 
 
+**Criterion A**
+
+|Level|Descriptor|
+|----|-----|
+|6|The client in the car rental office is identified and his situation described. The rationale for choosing the proposed product (Computer tools used) is justified and includes a range of appropriate criteria for evaluating the success of the product.|
+```.sh
+Rational
+* Great job with this criterion! One more justificaiton for using BASH is that we were learning it in class. 
+```
+
 Design
 ---------
 ### First Sketch of the System:
@@ -57,6 +72,17 @@ Design
 ![Flow Diagrams](FlowDiagrams.png)
 
 **Fig 3** Flow diagrams of how the install, create car, and uninstall functionalities will work. 
+
+## Criterion B
+|**level**|**Description**|
+|-----|------------|
+|8|An outline test plan is included but partially complete. A system diagram and some flow diagrams for algorithms in the product are included. They provide a basic understanding of how the product was developed.|
+```.sh
+Rationale
+*Great job with the system diagram. You can use the figure as a reference point and refeer to it with Fig. 1. For example: "As shown in Fig. 1, the computational system consists of ..." This is necessary to be concrete about the reason from including the picture.
+* Good job with the flow diagrams. Some symbols such as the one for the If Statement (a diamond) are missing, but the idea is clear. Here you did not get all the full marks because you are missing the description for all 3 diagrams. Remember, an image without description is an unbiguous tool. Add a paragram explaining what YOU see in the image and the reason why you included. 
+```
+
 
 Development
 --------
@@ -417,6 +443,16 @@ Testing the deleteCar.sh function. Was the car properly deleted from the maincar
 
 The only main issue found when coding this program was with the file organization. There was unnecessary `cd` commands which made it so that when running the createCar and deleteCar program, they could not be found. As such, the test didn't work properly. However, once that was fixed, the test worked properly. 
 
+## Criterion C
+|**level**|**Description**|
+|-----|------------|
+|6|The proposed solution is characterized by the appropriate use of existing tools. The techniques are adequate for the task and their use is explained. All sources are identified.|
+```.sh
+Rationale
+* Good job with this section Rikio.
+* Great job with the references at the bottom. You just need to include them in the body of the document where you used the information, e.g.:" As presented in [1], bash can be frustrating..."
+```
+
 Evaluation
 -----------
 
@@ -439,6 +475,15 @@ The uninstall, delete, create car, and record trip functions are quite simple so
 The install and backup functions are all fairly simplistic as well so while they could be improved, their functionality is already quite good. However, the install function could be made so that the location to install could be specified. In addition, backup could be simplified so that the suffix of "Volumes/" would not need to be written as an argument: instead, simply the name of the hard drive name would need to be entered. 
 
 The summarize and edit functions posed the most difficulties to me and as such, they also have the most room for improvement. While the summarize function is able to get the total distance for an individual car and for the entire fleet, it would be better if it were able to summarize data relating to the days rented out. In this way, it could see which cars were most popular and also which cars may require service most often due to their use. For the edit program, it would be better if individual trips could be edited so that typos could be corrected more easily. On top of that, the entire way of editing could be more easy for the user if rather than having to enter all the aspects of a car (license plate, car, model, passengers), only the license plate would have to be entered since that number typically stays constant on all cars.
+
+## Criterion D
+|**level**|**Description**|
+|-----|------------|
+|6|The product is fully evaluated against the success criteria identified in criterion A. Recommendations for further improvement of the product are realistic.|
+```.sh
+Rationale
+* The Improvements are realistic and necessary. The evidence for the achievement of the criteria is also sufficient. Well done
+```
 
 Citations
 ---------
